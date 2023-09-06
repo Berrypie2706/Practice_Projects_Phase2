@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Phase2EndProject.Models.laptop>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="accordion-item" style="background-color: paleturquoise ;text-decoration-color:revert-layer ;">
+    <h2 class="active" style="background:border-box;text-align:center;text-size-adjust:revert-layer">Shop Laptop</h2>
+</div>
+
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Specification)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Specification)
+        </td>
+        <td>
+            <button id="buynow" class="border-light" style="background-color:azure">BUY NOW</button>
+        @*</td>
+        <td>*@
+            <button id="addtocart" class="border-light" style="background-color:azure">ADD TO CART</button>
+        </td>
+    </tr>
+}
+
+</table>
